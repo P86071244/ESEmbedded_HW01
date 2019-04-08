@@ -1,2 +1,24 @@
-*.o
-*.elf
+#include <stdio.h>
+#include <stdlib.h>
+
+int add(int a,int b){return a+b;}
+int minus(int a,int b){return a-b;}
+int divi(int a,int b){return a/b;}
+int multi(int a,int b){return a*b;}
+int (*FunPtr[4])(int a,int b)={add,minus,divi,multi};
+
+int main()
+{
+ int function, a, b, result;
+ printf("Enter function number in 0~3 you want\n");
+ printf("0: Plus, 1: Minus, 2: Multiply, 3: Divided\n");
+ printf("EX: 1 + 1\n");
+ scanf("%d %d %d",&a,&fuction,&b);
+ 
+ if((fuction >= 0) && (fuction <= 3)
+ {
+  result=(*FunPtr[fuction])(a, b)
+ }
+ printf("a=%d , function=%d , b=%d, result=%d",a,function,b,result);
+return 0;
+}
